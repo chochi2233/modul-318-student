@@ -13,31 +13,32 @@ namespace SwissTransport
     
     public partial class Verbindungen : UserControl
     {
-        private ITransport transport;
+        Formatter formatter = new Formatter();
+        public ITransport transport = new Transport();
         public Verbindungen()
         {
             InitializeComponent();
         }
-
+        
+        /// <summary>
+        /// Zeigt die gewünschte verbindung an
+        /// </summary>
        public void Connection()
         {
-            transport = new Transport();
-            if (comboBoxnach.SelectedIndex != 0 && comboBoxvon.SelectedIndex != 0)
+            listBoxplan.Items.Add(" " + "Startstation" + "\t" + "Endstation" + "\t\t\t" + "Abfahrt" + "\t" + "Ankunft" + "\t" + "Zeit");
+            var connections = transport.GetConnections(comboBoxvon.Text, comboBoxnach.Text);
+            foreach(Connection c in connections.ConnectionList)
             {
-                var connections = transport.GetConnections(comboBoxvon.Text, comboBoxnach.Text);
-                foreach(Connection c in connections.ConnectionList)
-                {
-                    listBoxplan.Items.Add(" " + c.From + " X " + c.To + " Points: " + c.Duration);
-                }
+                
+                string departure = formatter.Dateformatter(c.From.Departure);
+                string arrival = formatter.Dateformatter(c.To.Arrival);
+                char[] sepdur = { ':' };
+                string[] duration = formatter.Splitter(c.Duration, sepdur);
+                
+                listBoxplan.Items.Add(" " + c.From.Station.Name + "\t\t" + c.To.Station.Name + "\t" + departure + "\t" + arrival + "\t" + duration[1] + "MIN");
             }
-            else if(comboBoxvon.SelectedIndex == -1)
-            {
-                MessageBox.Show("Geben Sie den Startort ein");
-            }
-            else if (comboBoxnach.SelectedIndex == -1)
-            {
-                MessageBox.Show("Geben Sie den Zielort ein");
-            }
+            
+            
 
 
 
@@ -45,7 +46,23 @@ namespace SwissTransport
 
         private void btnsearch_Click(object sender, EventArgs e)
         {
+            listBoxplan.Items.Clear();
             Connection();
+        }
+
+        private void comboBoxvon_TextUpdate(object sender, EventArgs e)
+        {
+            formatter.Combosearch(comboBoxvon);
+        }
+
+        private void comboBoxnach_TextUpdate(object sender, EventArgs e)
+        {
+            formatter.Combosearch(comboBoxnach);
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

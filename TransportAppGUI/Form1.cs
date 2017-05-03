@@ -14,6 +14,7 @@ namespace SwissTransport
     {
         private ITransport testee;
         Verbindungen verbindungen = new Verbindungen();
+        Fahrplan fahrplan = new Fahrplan();
         public Form1()
         {
             InitializeComponent();
@@ -28,6 +29,12 @@ namespace SwissTransport
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(verbindungen);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(fahrplan);
         }
     }
 }

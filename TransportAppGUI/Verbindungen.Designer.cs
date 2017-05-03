@@ -54,15 +54,17 @@
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(16, 160);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(246, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(242, 22);
             this.dateTimePicker1.TabIndex = 23;
+            this.dateTimePicker1.Value = new System.DateTime(2017, 5, 3, 15, 46, 4, 0);
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // btnsearch
             // 
             this.btnsearch.Location = new System.Drawing.Point(680, 82);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(75, 23);
-            this.btnsearch.TabIndex = 22;
+            this.btnsearch.TabIndex = 18;
             this.btnsearch.Text = "Search";
             this.btnsearch.UseVisualStyleBackColor = true;
             this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
@@ -73,7 +75,8 @@
             this.comboBoxnach.Location = new System.Drawing.Point(296, 82);
             this.comboBoxnach.Name = "comboBoxnach";
             this.comboBoxnach.Size = new System.Drawing.Size(257, 24);
-            this.comboBoxnach.TabIndex = 21;
+            this.comboBoxnach.TabIndex = 17;
+            this.comboBoxnach.TextUpdate += new System.EventHandler(this.comboBoxnach_TextUpdate);
             // 
             // label4
             // 
@@ -116,6 +119,7 @@
             this.comboBoxvon.Name = "comboBoxvon";
             this.comboBoxvon.Size = new System.Drawing.Size(257, 24);
             this.comboBoxvon.TabIndex = 16;
+            this.comboBoxvon.TextUpdate += new System.EventHandler(this.comboBoxvon_TextUpdate);
             // 
             // label1
             // 

@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnverbindungen = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnfahrplan = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnverbindungen
             // 
-            this.button1.Location = new System.Drawing.Point(24, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Fahrplan";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnverbindungen.Location = new System.Drawing.Point(24, 13);
+            this.btnverbindungen.Name = "btnverbindungen";
+            this.btnverbindungen.Size = new System.Drawing.Size(106, 34);
+            this.btnverbindungen.TabIndex = 0;
+            this.btnverbindungen.Text = "Verbindungen";
+            this.btnverbindungen.UseVisualStyleBackColor = true;
+            this.btnverbindungen.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -49,13 +50,25 @@
             this.panel1.Size = new System.Drawing.Size(986, 448);
             this.panel1.TabIndex = 1;
             // 
+            // btnfahrplan
+            // 
+            this.btnfahrplan.Location = new System.Drawing.Point(136, 13);
+            this.btnfahrplan.Name = "btnfahrplan";
+            this.btnfahrplan.Size = new System.Drawing.Size(106, 34);
+            this.btnfahrplan.TabIndex = 2;
+            this.btnfahrplan.Text = "Fahrplan";
+            this.btnfahrplan.UseVisualStyleBackColor = true;
+            this.btnfahrplan.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
+            this.AcceptButton = this.btnverbindungen;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1010, 513);
+            this.Controls.Add(this.btnfahrplan);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnverbindungen);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -64,8 +77,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnverbindungen;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnfahrplan;
     }
 }
 
