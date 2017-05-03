@@ -15,12 +15,12 @@ namespace SwissTransport
 
             Assert.AreEqual(50, stations.StationList.Count);
         }
-
+            
         [TestMethod]
         public void StationBoard()
         {
             testee = new Transport();
-            var stationBoard = testee.GetStationBoard("Sursee", "8502007");
+            var stationBoard = testee.GetStationBoard("Sursee", "8502017");
 
             Assert.IsNotNull(stationBoard);
         }
