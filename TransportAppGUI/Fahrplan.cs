@@ -13,28 +13,27 @@ namespace SwissTransport
 {
     public partial class Fahrplan : UserControl
     {
+        StationBoardRoot station = new StationBoardRoot();
         Formatter formatter = new Formatter();
+        public ITransport transport = new Transport();
         public Fahrplan()
         {
             InitializeComponent();
         }
-        public ITransport transport = new Transport();
-        private void Fahrplan_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void comboboxstation_TextUpdate(object sender, EventArgs e)
         {
             formatter.Combosearch(comboboxstation);
             
         }
-
-        private void btnsearch_Click(object sender, EventArgs e)
+        /// <summary>
+        /// gibt die Verbindungen von der jeweiligen Station aus
+        /// </summary>
+        private void stationboard()
         {
-            StationBoardRoot station = new StationBoardRoot();
+            listBoxplan.Items.Clear();
             station = transport.GetStationBoard(comboboxstation.Text, comboboxstation.Text);
-            
+
             foreach (StationBoard s in station.Entries)
             {
                 char[] sep = { ' ' };
@@ -42,6 +41,15 @@ namespace SwissTransport
                 listBoxplan.Items.Add(" " + s.Name + "\t" + s.To + "\t" + s.Stop.Departure.ToShortTimeString());
             }
             lblstation.Text = comboboxstation.Text;
+        }
+        private void btnsearch_Click(object sender, EventArgs e)
+        {
+            stationboard();
+        }
+        
+        public Button GetAcceptButton()
+        {
+            return btnsearch;
         }
     }
 }

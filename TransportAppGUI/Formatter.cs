@@ -13,11 +13,11 @@ namespace SwissTransport
     {
         public ITransport transport = new Transport();
         /// <summary>
-        /// Splitted den String. gibt ein stringarray zurück
+        /// Splitted den String
         /// </summary>
         /// <param name="value">dieser String wird gesplitted</param>
         /// <param name="sep">die gewünschten separatoren</param>
-        /// <returns></returns>
+        /// <returns>string[]</returns>
         public string[] Splitter(string value, char[] sep)
         {
             string[] word = value.Split(sep);
@@ -28,7 +28,7 @@ namespace SwissTransport
         /// Formatiert das Datum
         /// </summary>
         /// <param name="date">dieser String wird in ein Datum verwandelt und wieder als string zurückgegeben</param>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public string Dateformatter(string date)
         {
             DateTime dtFrom = Convert.ToDateTime(date);

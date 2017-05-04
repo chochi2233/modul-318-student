@@ -12,7 +12,7 @@ namespace SwissTransport
 {
     public partial class Form1 : Form
     {
-        private ITransport testee;
+        private ITransport transport;
         Verbindungen verbindungen = new Verbindungen();
         Fahrplan fahrplan = new Fahrplan();
         public Form1()
@@ -20,21 +20,26 @@ namespace SwissTransport
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(verbindungen);
+            this.AcceptButton = verbindungen.GetAcceptButton();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(fahrplan);
+            this.AcceptButton = fahrplan.GetAcceptButton();
+        }
+        
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(verbindungen);
+            this.AcceptButton = verbindungen.GetAcceptButton();
+
         }
     }
 }

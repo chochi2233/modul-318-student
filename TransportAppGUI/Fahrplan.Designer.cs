@@ -40,14 +40,14 @@
             // 
             this.listBoxplan.FormattingEnabled = true;
             this.listBoxplan.ItemHeight = 16;
-            this.listBoxplan.Location = new System.Drawing.Point(80, 187);
+            this.listBoxplan.Location = new System.Drawing.Point(16, 175);
             this.listBoxplan.Name = "listBoxplan";
             this.listBoxplan.Size = new System.Drawing.Size(739, 196);
             this.listBoxplan.TabIndex = 27;
             // 
             // btnsearch
             // 
-            this.btnsearch.Location = new System.Drawing.Point(744, 97);
+            this.btnsearch.Location = new System.Drawing.Point(16, 110);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(75, 23);
             this.btnsearch.TabIndex = 26;
@@ -58,16 +58,16 @@
             // comboboxstation
             // 
             this.comboboxstation.FormattingEnabled = true;
-            this.comboboxstation.Location = new System.Drawing.Point(80, 97);
+            this.comboboxstation.Location = new System.Drawing.Point(16, 80);
             this.comboboxstation.Name = "comboboxstation";
-            this.comboboxstation.Size = new System.Drawing.Size(626, 24);
+            this.comboboxstation.Size = new System.Drawing.Size(263, 24);
             this.comboboxstation.TabIndex = 25;
             this.comboboxstation.TextUpdate += new System.EventHandler(this.comboboxstation_TextUpdate);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(91, 74);
+            this.label1.Location = new System.Drawing.Point(13, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 17);
             this.label1.TabIndex = 28;
@@ -76,7 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 167);
+            this.label2.Location = new System.Drawing.Point(13, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(188, 17);
             this.label2.TabIndex = 29;
@@ -85,7 +85,7 @@
             // lblstation
             // 
             this.lblstation.AutoSize = true;
-            this.lblstation.Location = new System.Drawing.Point(282, 167);
+            this.lblstation.Location = new System.Drawing.Point(198, 141);
             this.lblstation.Name = "lblstation";
             this.lblstation.Size = new System.Drawing.Size(72, 17);
             this.lblstation.TabIndex = 30;
@@ -103,7 +103,6 @@
             this.Controls.Add(this.comboboxstation);
             this.Name = "Fahrplan";
             this.Size = new System.Drawing.Size(898, 546);
-            this.Load += new System.EventHandler(this.Fahrplan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
