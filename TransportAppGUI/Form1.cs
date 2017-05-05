@@ -12,7 +12,7 @@ namespace SwissTransport
 {
     public partial class Form1 : Form
     {
-        Karte karte = new Karte();
+        
         Verbindungen verbindungen = new Verbindungen();
         Fahrplan fahrplan = new Fahrplan();
         
@@ -42,12 +42,6 @@ namespace SwissTransport
             this.AcceptButton = verbindungen.GetAcceptButton();
             
 
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(karte);
         }
     }
 }

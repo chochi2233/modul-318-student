@@ -28,22 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBoxplan = new System.Windows.Forms.ListBox();
             this.btnsearch = new System.Windows.Forms.Button();
             this.comboboxstation = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblstation = new System.Windows.Forms.Label();
+            this.listViewplan = new System.Windows.Forms.ListView();
             this.SuspendLayout();
-            // 
-            // listBoxplan
-            // 
-            this.listBoxplan.FormattingEnabled = true;
-            this.listBoxplan.ItemHeight = 16;
-            this.listBoxplan.Location = new System.Drawing.Point(16, 209);
-            this.listBoxplan.Name = "listBoxplan";
-            this.listBoxplan.Size = new System.Drawing.Size(739, 196);
-            this.listBoxplan.TabIndex = 27;
             // 
             // btnsearch
             // 
@@ -91,14 +82,22 @@
             this.lblstation.TabIndex = 30;
             this.lblstation.Text = "________";
             // 
+            // listViewplan
+            // 
+            this.listViewplan.Location = new System.Drawing.Point(16, 205);
+            this.listViewplan.Name = "listViewplan";
+            this.listViewplan.Size = new System.Drawing.Size(591, 196);
+            this.listViewplan.TabIndex = 31;
+            this.listViewplan.UseCompatibleStateImageBehavior = false;
+            // 
             // Fahrplan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.listViewplan);
             this.Controls.Add(this.lblstation);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBoxplan);
             this.Controls.Add(this.btnsearch);
             this.Controls.Add(this.comboboxstation);
             this.Name = "Fahrplan";
@@ -109,12 +108,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBoxplan;
         private System.Windows.Forms.Button btnsearch;
         private System.Windows.Forms.ComboBox comboboxstation;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblstation;
+        private System.Windows.Forms.ListView listViewplan;
     }
 }

@@ -13,7 +13,7 @@ namespace SwissTransport
 
     public partial class Verbindungen : UserControl
     {
-        Karte karte = new Karte();
+        
         Formatter formatter = new Formatter();
         public ITransport transport = new Transport();
         public Verbindungen()
@@ -36,30 +36,48 @@ namespace SwissTransport
         /// </summary>
         private void Connection()
         {
-                if (comboBoxvon.Text.Length > 0 && comboBoxnach.Text.Length > 0)
-                {
-                    string date = "&date=" + dateTimePicker1.Value.Year + "-" + dateTimePicker1.Value.Month + "-" + dateTimePicker1.Value.Day;
-                    string time = "&time=" + dateTimePicker1.Value.Hour + ":" + dateTimePicker1.Value.Minute;
-                    listBoxplan.Items.Clear();
-                    listBoxplan.Items.Add(" " + "Startstation" + "\t" + "Endstation" + "\t\t\t" + "Abfahrt" + "\t\t" + "Ankunft" + "\t\t" + "Zeit");
+           if (comboBoxvon.Text.Length > 0 && comboBoxnach.Text.Length > 0)
+           {
+                string date = "&date=" + dateTimePicker1.Value.Year + "-" + dateTimePicker1.Value.Month + "-" + dateTimePicker1.Value.Day;
+                string time = "&time=" + dateTimePicker1.Value.Hour + ":" + dateTimePicker1.Value.Minute;
+                listViewplan.Clear();
+                
                     try
                     {
+                        listViewplan.Columns.Add("", 0);
+                        listViewplan.Columns.Add("Startstation", 200);
+                        listViewplan.Columns.Add("Endstation", 200);
+                        listViewplan.Columns.Add("Abfahrt", 120);
+                        listViewplan.Columns.Add("Ankunft", 120);
+                        listViewplan.Columns.Add("Zeit", 120);
                         var connections = transport.GetConnections(comboBoxvon.Text, comboBoxnach.Text, date, time);
                         foreach (Connection c in connections.ConnectionList)
                         {
+                            ListViewItem item1 = new ListViewItem("");
                             string departure = formatter.Dateformatter(c.From.Departure) + "   " + formatter.Timeformatter(c.From.Departure);
                             string arrival = formatter.Dateformatter(c.To.Arrival) + "   " + formatter.Timeformatter(c.To.Arrival);
                             char[] sepdur = { ':' };
                             string[] duration = formatter.Splitter(c.Duration, sepdur);
 
-                            listBoxplan.Items.Add(" " + c.From.Station.Name + "\t\t" + c.To.Station.Name + "\t" + departure + "\t" + arrival + "\t" + duration[1] + "min");
+                            item1.SubItems.Add(c.From.Station.Name);
+                            item1.SubItems.Add(c.To.Station.Name);
+                            item1.SubItems.Add(departure);
+                            item1.SubItems.Add(arrival);
+                            item1.SubItems.Add(duration[1] + "min");
+
+                            listViewplan.Items.Add(item1);
+                            listViewplan.View = View.Details;
+                            listViewplan.FullRowSelect = true;
                         }
                     }
                     catch
                     {
                     MessageBox.Show("Zu viele Server Requests");
                     }
-                }
+                btnsave.Visible = true;
+                btnkartevon.Visible = true;
+                btnkartenach.Visible = true;
+            }
             else if (comboBoxvon.Text.Length <= 0 && comboBoxnach.Text.Length > 0)
             {
                 MessageBox.Show("Geben Sie ihren Startbahnhof ein");
@@ -78,9 +96,7 @@ namespace SwissTransport
 
         private void btnsearch_Click(object sender, EventArgs e)
         {
-            btnsave.Visible = true;
-            btnkartevon.Visible = true;
-            btnkartenach.Visible = true;
+            
             Connection();
         }
 

@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Verbindungen));
-            this.listBoxplan = new System.Windows.Forms.ListBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnsearch = new System.Windows.Forms.Button();
             this.comboBoxnach = new System.Windows.Forms.ComboBox();
@@ -44,17 +43,8 @@
             this.btnsave = new System.Windows.Forms.Button();
             this.btnkartevon = new System.Windows.Forms.Button();
             this.btnkartenach = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewplan = new System.Windows.Forms.ListView();
             this.SuspendLayout();
-            // 
-            // listBoxplan
-            // 
-            this.listBoxplan.FormattingEnabled = true;
-            this.listBoxplan.ItemHeight = 16;
-            this.listBoxplan.Location = new System.Drawing.Point(16, 239);
-            this.listBoxplan.Name = "listBoxplan";
-            this.listBoxplan.Size = new System.Drawing.Size(359, 196);
-            this.listBoxplan.TabIndex = 24;
             // 
             // dateTimePicker1
             // 
@@ -178,24 +168,23 @@
             this.btnkartenach.UseVisualStyleBackColor = true;
             this.btnkartenach.Click += new System.EventHandler(this.btnkartenach_Click);
             // 
-            // listView1
+            // listViewplan
             // 
-            this.listView1.Location = new System.Drawing.Point(431, 239);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(459, 196);
-            this.listView1.TabIndex = 31;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listViewplan.Location = new System.Drawing.Point(16, 239);
+            this.listViewplan.Name = "listViewplan";
+            this.listViewplan.Size = new System.Drawing.Size(874, 196);
+            this.listViewplan.TabIndex = 31;
+            this.listViewplan.UseCompatibleStateImageBehavior = false;
             // 
             // Verbindungen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listViewplan);
             this.Controls.Add(this.btnkartenach);
             this.Controls.Add(this.btnkartevon);
             this.Controls.Add(this.btnsave);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.listBoxplan);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnsearch);
             this.Controls.Add(this.comboBoxnach);
@@ -213,8 +202,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBoxplan;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnsearch;
         private System.Windows.Forms.ComboBox comboBoxnach;
@@ -228,6 +215,6 @@
         private System.Windows.Forms.Button btnsave;
         private System.Windows.Forms.Button btnkartevon;
         private System.Windows.Forms.Button btnkartenach;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewplan;
     }
 }

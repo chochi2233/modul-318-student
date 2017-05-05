@@ -31,16 +31,35 @@ namespace SwissTransport
         /// </summary>
         private void stationboard()
         {
-            listBoxplan.Items.Clear();
-            station = transport.GetStationBoard(comboboxstation.Text, comboboxstation.Text);
-
-            foreach (StationBoard s in station.Entries)
+            if (comboboxstation.Text.Length > 0)
             {
-                char[] sep = { ' ' };
-                string[] departure = formatter.Splitter(Convert.ToString(s.Stop.Departure.Date), sep);
-                listBoxplan.Items.Add(" " + s.Name + "\t" + s.To + "\t" + s.Stop.Departure.ToShortTimeString());
+                try
+                {
+                    station = transport.GetStationBoard(comboboxstation.Text, comboboxstation.Text);
+                    listViewplan.Columns.Add("", 0);
+                    listViewplan.Columns.Add("Verbindung", 200);
+                    listViewplan.Columns.Add("Endstation", 200);
+                    listViewplan.Columns.Add("Abfahrt", 120);
+                    foreach (StationBoard s in station.Entries)
+                    {
+                        ListViewItem item1 = new ListViewItem("");
+                        item1.SubItems.Add(s.Name);
+                        item1.SubItems.Add(s.To);
+                        item1.SubItems.Add(s.Stop.Departure.ToShortTimeString());
+                        listViewplan.Items.Add(item1);
+                        listViewplan.View = View.Details;
+                        listViewplan.FullRowSelect = true;
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("zu viele Serverrequests");
+                }
+                lblstation.Text = comboboxstation.Text;
+            }else
+            {
+                MessageBox.Show("Geben Sie ihre Station ein");
             }
-            lblstation.Text = comboboxstation.Text;
         }
         private void btnsearch_Click(object sender, EventArgs e)
         {
