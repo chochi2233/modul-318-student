@@ -25,14 +25,25 @@ namespace SwissTransport
         }
 
         /// <summary>
-        /// Formatiert das Datum
+        /// Formatiert die Zeit zu ShortTime
         /// </summary>
         /// <param name="date">dieser String wird in ein Datum verwandelt und wieder als string zurückgegeben</param>
         /// <returns>string</returns>
+        public string Timeformatter(string time)
+        {
+            DateTime dtFrom = Convert.ToDateTime(time);
+            string endtime = dtFrom.ToShortTimeString();
+            return endtime;
+        }
+        /// <summary>
+        /// Formatiert das Datum zu ShortDate
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
         public string Dateformatter(string date)
         {
             DateTime dtFrom = Convert.ToDateTime(date);
-            string enddate = dtFrom.ToShortTimeString();
+            string enddate = dtFrom.ToShortDateString();
             return enddate;
         }
 
@@ -43,18 +54,24 @@ namespace SwissTransport
         public void Combosearch(ComboBox cb)
         {
             string cbtext = cb.Text;
-
-            if (cbtext.Length >= 3)
+            try
             {
-                Stations stations = new Stations();
-                stations = transport.GetStations(cbtext + ",");
-                cb.Items.Clear();
-                cb.DroppedDown = true;
-                cb.SelectionStart = cb.Text.Length;
-                foreach (Station s in stations.StationList)
+                if (cbtext.Length >= 3)
                 {
-                    cb.Items.Add(s.Name);
+                    Stations stations = new Stations();
+                    stations = transport.GetStations(cbtext + ",");
+                    cb.Items.Clear();
+                    cb.DroppedDown = true;
+                    cb.SelectionStart = cb.Text.Length;
+                    foreach (Station s in stations.StationList)
+                    {
+                        cb.Items.Add(s.Name);
+                    }
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Zu viele Server Requests");
             }
         }
 

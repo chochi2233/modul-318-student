@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Verbindungen));
             this.listBoxplan = new System.Windows.Forms.ListBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnsearch = new System.Windows.Forms.Button();
@@ -39,6 +40,11 @@
             this.comboBoxvon = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnsave = new System.Windows.Forms.Button();
+            this.btnkartevon = new System.Windows.Forms.Button();
+            this.btnkartenach = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // listBoxplan
@@ -47,7 +53,7 @@
             this.listBoxplan.ItemHeight = 16;
             this.listBoxplan.Location = new System.Drawing.Point(16, 239);
             this.listBoxplan.Name = "listBoxplan";
-            this.listBoxplan.Size = new System.Drawing.Size(739, 196);
+            this.listBoxplan.Size = new System.Drawing.Size(359, 196);
             this.listBoxplan.TabIndex = 24;
             // 
             // dateTimePicker1
@@ -63,21 +69,22 @@
             // 
             // btnsearch
             // 
-            this.btnsearch.Location = new System.Drawing.Point(296, 160);
+            this.btnsearch.Location = new System.Drawing.Point(272, 149);
             this.btnsearch.Name = "btnsearch";
-            this.btnsearch.Size = new System.Drawing.Size(75, 25);
+            this.btnsearch.Size = new System.Drawing.Size(137, 48);
             this.btnsearch.TabIndex = 18;
-            this.btnsearch.Text = "Search";
+            this.btnsearch.Text = "Verbindung suchen";
             this.btnsearch.UseVisualStyleBackColor = true;
             this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
             // 
             // comboBoxnach
             // 
             this.comboBoxnach.FormattingEnabled = true;
-            this.comboBoxnach.Location = new System.Drawing.Point(296, 82);
+            this.comboBoxnach.Location = new System.Drawing.Point(308, 82);
             this.comboBoxnach.Name = "comboBoxnach";
             this.comboBoxnach.Size = new System.Drawing.Size(257, 24);
             this.comboBoxnach.TabIndex = 17;
+            this.comboBoxnach.SelectedIndexChanged += new System.EventHandler(this.comboBoxnach_SelectedIndexChanged);
             this.comboBoxnach.TextUpdate += new System.EventHandler(this.comboBoxnach_TextUpdate);
             // 
             // label4
@@ -101,7 +108,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(293, 61);
+            this.label2.Location = new System.Drawing.Point(305, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 17);
             this.label2.TabIndex = 17;
@@ -114,6 +121,7 @@
             this.comboBoxvon.Name = "comboBoxvon";
             this.comboBoxvon.Size = new System.Drawing.Size(257, 24);
             this.comboBoxvon.TabIndex = 16;
+            this.comboBoxvon.SelectedIndexChanged += new System.EventHandler(this.comboBoxvon_SelectedIndexChanged);
             this.comboBoxvon.TextUpdate += new System.EventHandler(this.comboBoxvon_TextUpdate);
             // 
             // label1
@@ -131,10 +139,62 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 216);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 17);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Verbindungen";
+            // 
+            // btnsave
+            // 
+            this.btnsave.Location = new System.Drawing.Point(279, 203);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(75, 23);
+            this.btnsave.TabIndex = 26;
+            this.btnsave.Text = "Save";
+            this.btnsave.UseVisualStyleBackColor = true;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
+            // 
+            // btnkartevon
+            // 
+            this.btnkartevon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnkartevon.BackgroundImage")));
+            this.btnkartevon.Location = new System.Drawing.Point(279, 81);
+            this.btnkartevon.Name = "btnkartevon";
+            this.btnkartevon.Size = new System.Drawing.Size(23, 24);
+            this.btnkartevon.TabIndex = 29;
+            this.btnkartevon.UseVisualStyleBackColor = true;
+            this.btnkartevon.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnkartenach
+            // 
+            this.btnkartenach.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnkartenach.BackgroundImage")));
+            this.btnkartenach.Location = new System.Drawing.Point(571, 82);
+            this.btnkartenach.Name = "btnkartenach";
+            this.btnkartenach.Size = new System.Drawing.Size(25, 25);
+            this.btnkartenach.TabIndex = 30;
+            this.btnkartenach.UseVisualStyleBackColor = true;
+            this.btnkartenach.Click += new System.EventHandler(this.btnkartenach_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(431, 239);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(459, 196);
+            this.listView1.TabIndex = 31;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // Verbindungen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.btnkartenach);
+            this.Controls.Add(this.btnkartevon);
+            this.Controls.Add(this.btnsave);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.listBoxplan);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnsearch);
@@ -145,7 +205,7 @@
             this.Controls.Add(this.comboBoxvon);
             this.Controls.Add(this.label1);
             this.Name = "Verbindungen";
-            this.Size = new System.Drawing.Size(898, 546);
+            this.Size = new System.Drawing.Size(945, 546);
             this.Load += new System.EventHandler(this.Verbindungen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -164,5 +224,10 @@
         private System.Windows.Forms.ComboBox comboBoxvon;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnsave;
+        private System.Windows.Forms.Button btnkartevon;
+        private System.Windows.Forms.Button btnkartenach;
+        private System.Windows.Forms.ListView listView1;
     }
 }

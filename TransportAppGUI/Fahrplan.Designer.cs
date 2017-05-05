@@ -40,7 +40,7 @@
             // 
             this.listBoxplan.FormattingEnabled = true;
             this.listBoxplan.ItemHeight = 16;
-            this.listBoxplan.Location = new System.Drawing.Point(16, 175);
+            this.listBoxplan.Location = new System.Drawing.Point(16, 209);
             this.listBoxplan.Name = "listBoxplan";
             this.listBoxplan.Size = new System.Drawing.Size(739, 196);
             this.listBoxplan.TabIndex = 27;
@@ -49,9 +49,9 @@
             // 
             this.btnsearch.Location = new System.Drawing.Point(16, 110);
             this.btnsearch.Name = "btnsearch";
-            this.btnsearch.Size = new System.Drawing.Size(75, 23);
+            this.btnsearch.Size = new System.Drawing.Size(109, 59);
             this.btnsearch.TabIndex = 26;
-            this.btnsearch.Text = "Search";
+            this.btnsearch.Text = "Verbindugnen suchen";
             this.btnsearch.UseVisualStyleBackColor = true;
             this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
             // 
@@ -76,7 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 141);
+            this.label2.Location = new System.Drawing.Point(13, 175);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(188, 17);
             this.label2.TabIndex = 29;
@@ -85,7 +85,7 @@
             // lblstation
             // 
             this.lblstation.AutoSize = true;
-            this.lblstation.Location = new System.Drawing.Point(198, 141);
+            this.lblstation.Location = new System.Drawing.Point(198, 175);
             this.lblstation.Name = "lblstation";
             this.lblstation.Size = new System.Drawing.Size(72, 17);
             this.lblstation.TabIndex = 30;
