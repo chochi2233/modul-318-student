@@ -49,7 +49,7 @@ namespace SwissTransport
                         listViewplan.Columns.Add("Endstation", 200);
                         listViewplan.Columns.Add("Abfahrt", 120);
                         listViewplan.Columns.Add("Ankunft", 120);
-                        listViewplan.Columns.Add("Zeit", 120);
+                        listViewplan.Columns.Add("Zeit", 50);
                         var connections = transport.GetConnections(comboBoxvon.Text, comboBoxnach.Text, date, time);
                         foreach (Connection c in connections.ConnectionList)
                         {
@@ -74,7 +74,6 @@ namespace SwissTransport
                     {
                     MessageBox.Show("Zu viele Server Requests");
                     }
-                btnsave.Visible = true;
                 btnkartevon.Visible = true;
                 btnkartenach.Visible = true;
             }
@@ -117,7 +116,6 @@ namespace SwissTransport
 
         private void Verbindungen_Load(object sender, EventArgs e)
         {
-            btnsave.Visible = false;
             btnkartevon.Visible = false;
             btnkartenach.Visible = false;
             dateTimePicker1.Value = DateTime.Now;
@@ -126,16 +124,6 @@ namespace SwissTransport
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             timer1.Stop();
-        }
-
-        private void btnsave_Click(object sender, EventArgs e)
-        {
-            /*if (listBoxplan.Items.Count != 0)
-            {
-                foreach(string s in listBoxplan)
-                MessageBox.Show(listBoxplan.Items.ToString());
-
-            }*/
         }
 
         private void button2_Click(object sender, EventArgs e)

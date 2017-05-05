@@ -40,7 +40,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label5 = new System.Windows.Forms.Label();
-            this.btnsave = new System.Windows.Forms.Button();
             this.btnkartevon = new System.Windows.Forms.Button();
             this.btnkartenach = new System.Windows.Forms.Button();
             this.listViewplan = new System.Windows.Forms.ListView();
@@ -59,9 +58,9 @@
             // 
             // btnsearch
             // 
-            this.btnsearch.Location = new System.Drawing.Point(272, 149);
+            this.btnsearch.Location = new System.Drawing.Point(595, 138);
             this.btnsearch.Name = "btnsearch";
-            this.btnsearch.Size = new System.Drawing.Size(137, 48);
+            this.btnsearch.Size = new System.Drawing.Size(120, 57);
             this.btnsearch.TabIndex = 18;
             this.btnsearch.Text = "Verbindung suchen";
             this.btnsearch.UseVisualStyleBackColor = true;
@@ -70,9 +69,9 @@
             // comboBoxnach
             // 
             this.comboBoxnach.FormattingEnabled = true;
-            this.comboBoxnach.Location = new System.Drawing.Point(308, 82);
+            this.comboBoxnach.Location = new System.Drawing.Point(368, 80);
             this.comboBoxnach.Name = "comboBoxnach";
-            this.comboBoxnach.Size = new System.Drawing.Size(257, 24);
+            this.comboBoxnach.Size = new System.Drawing.Size(313, 24);
             this.comboBoxnach.TabIndex = 17;
             this.comboBoxnach.SelectedIndexChanged += new System.EventHandler(this.comboBoxnach_SelectedIndexChanged);
             this.comboBoxnach.TextUpdate += new System.EventHandler(this.comboBoxnach_TextUpdate);
@@ -98,7 +97,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(305, 62);
+            this.label2.Location = new System.Drawing.Point(373, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 17);
             this.label2.TabIndex = 17;
@@ -109,7 +108,7 @@
             this.comboBoxvon.FormattingEnabled = true;
             this.comboBoxvon.Location = new System.Drawing.Point(16, 81);
             this.comboBoxvon.Name = "comboBoxvon";
-            this.comboBoxvon.Size = new System.Drawing.Size(257, 24);
+            this.comboBoxvon.Size = new System.Drawing.Size(315, 24);
             this.comboBoxvon.TabIndex = 16;
             this.comboBoxvon.SelectedIndexChanged += new System.EventHandler(this.comboBoxvon_SelectedIndexChanged);
             this.comboBoxvon.TextUpdate += new System.EventHandler(this.comboBoxvon_TextUpdate);
@@ -132,28 +131,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 216);
+            this.label5.Location = new System.Drawing.Point(13, 219);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 17);
             this.label5.TabIndex = 25;
             this.label5.Text = "Verbindungen";
             // 
-            // btnsave
-            // 
-            this.btnsave.Location = new System.Drawing.Point(279, 203);
-            this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(75, 23);
-            this.btnsave.TabIndex = 26;
-            this.btnsave.Text = "Save";
-            this.btnsave.UseVisualStyleBackColor = true;
-            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
-            // 
             // btnkartevon
             // 
             this.btnkartevon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnkartevon.BackgroundImage")));
-            this.btnkartevon.Location = new System.Drawing.Point(279, 81);
+            this.btnkartevon.Location = new System.Drawing.Point(337, 80);
             this.btnkartevon.Name = "btnkartevon";
-            this.btnkartevon.Size = new System.Drawing.Size(23, 24);
+            this.btnkartevon.Size = new System.Drawing.Size(25, 25);
             this.btnkartevon.TabIndex = 29;
             this.btnkartevon.UseVisualStyleBackColor = true;
             this.btnkartevon.Click += new System.EventHandler(this.button2_Click);
@@ -161,7 +150,7 @@
             // btnkartenach
             // 
             this.btnkartenach.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnkartenach.BackgroundImage")));
-            this.btnkartenach.Location = new System.Drawing.Point(571, 82);
+            this.btnkartenach.Location = new System.Drawing.Point(687, 81);
             this.btnkartenach.Name = "btnkartenach";
             this.btnkartenach.Size = new System.Drawing.Size(25, 25);
             this.btnkartenach.TabIndex = 30;
@@ -172,7 +161,7 @@
             // 
             this.listViewplan.Location = new System.Drawing.Point(16, 239);
             this.listViewplan.Name = "listViewplan";
-            this.listViewplan.Size = new System.Drawing.Size(874, 196);
+            this.listViewplan.Size = new System.Drawing.Size(699, 196);
             this.listViewplan.TabIndex = 31;
             this.listViewplan.UseCompatibleStateImageBehavior = false;
             // 
@@ -183,7 +172,6 @@
             this.Controls.Add(this.listViewplan);
             this.Controls.Add(this.btnkartenach);
             this.Controls.Add(this.btnkartevon);
-            this.Controls.Add(this.btnsave);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnsearch);
@@ -194,7 +182,7 @@
             this.Controls.Add(this.comboBoxvon);
             this.Controls.Add(this.label1);
             this.Name = "Verbindungen";
-            this.Size = new System.Drawing.Size(945, 546);
+            this.Size = new System.Drawing.Size(749, 453);
             this.Load += new System.EventHandler(this.Verbindungen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -212,7 +200,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnsave;
         private System.Windows.Forms.Button btnkartevon;
         private System.Windows.Forms.Button btnkartenach;
         private System.Windows.Forms.ListView listViewplan;

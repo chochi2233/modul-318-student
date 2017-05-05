@@ -47,7 +47,7 @@
             // 
             this.panel1.Location = new System.Drawing.Point(12, 53);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(986, 448);
+            this.panel1.Size = new System.Drawing.Size(749, 453);
             this.panel1.TabIndex = 3;
             // 
             // btnfahrplan
@@ -64,7 +64,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 513);
+            this.ClientSize = new System.Drawing.Size(770, 513);
             this.Controls.Add(this.btnfahrplan);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnverbindungen);

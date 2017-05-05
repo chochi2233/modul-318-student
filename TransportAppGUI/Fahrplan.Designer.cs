@@ -38,9 +38,9 @@
             // 
             // btnsearch
             // 
-            this.btnsearch.Location = new System.Drawing.Point(16, 110);
+            this.btnsearch.Location = new System.Drawing.Point(595, 138);
             this.btnsearch.Name = "btnsearch";
-            this.btnsearch.Size = new System.Drawing.Size(109, 59);
+            this.btnsearch.Size = new System.Drawing.Size(120, 57);
             this.btnsearch.TabIndex = 26;
             this.btnsearch.Text = "Verbindugnen suchen";
             this.btnsearch.UseVisualStyleBackColor = true;
@@ -49,9 +49,9 @@
             // comboboxstation
             // 
             this.comboboxstation.FormattingEnabled = true;
-            this.comboboxstation.Location = new System.Drawing.Point(16, 80);
+            this.comboboxstation.Location = new System.Drawing.Point(16, 81);
             this.comboboxstation.Name = "comboboxstation";
-            this.comboboxstation.Size = new System.Drawing.Size(263, 24);
+            this.comboboxstation.Size = new System.Drawing.Size(699, 24);
             this.comboboxstation.TabIndex = 25;
             this.comboboxstation.TextUpdate += new System.EventHandler(this.comboboxstation_TextUpdate);
             // 
@@ -67,7 +67,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 175);
+            this.label2.Location = new System.Drawing.Point(13, 219);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(188, 17);
             this.label2.TabIndex = 29;
@@ -76,7 +76,7 @@
             // lblstation
             // 
             this.lblstation.AutoSize = true;
-            this.lblstation.Location = new System.Drawing.Point(198, 175);
+            this.lblstation.Location = new System.Drawing.Point(198, 219);
             this.lblstation.Name = "lblstation";
             this.lblstation.Size = new System.Drawing.Size(72, 17);
             this.lblstation.TabIndex = 30;
@@ -84,9 +84,9 @@
             // 
             // listViewplan
             // 
-            this.listViewplan.Location = new System.Drawing.Point(16, 205);
+            this.listViewplan.Location = new System.Drawing.Point(16, 239);
             this.listViewplan.Name = "listViewplan";
-            this.listViewplan.Size = new System.Drawing.Size(591, 196);
+            this.listViewplan.Size = new System.Drawing.Size(699, 196);
             this.listViewplan.TabIndex = 31;
             this.listViewplan.UseCompatibleStateImageBehavior = false;
             // 
@@ -101,7 +101,7 @@
             this.Controls.Add(this.btnsearch);
             this.Controls.Add(this.comboboxstation);
             this.Name = "Fahrplan";
-            this.Size = new System.Drawing.Size(898, 546);
+            this.Size = new System.Drawing.Size(734, 451);
             this.ResumeLayout(false);
             this.PerformLayout();
 
